@@ -6,7 +6,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "t_building")
-public class TZiboBuilding {
+public class TBuilding {
 
     /**
      * 主键 ID
@@ -80,7 +80,7 @@ public class TZiboBuilding {
         this.cardDate = carddate;
     }
 
-    public TZiboBuilding() {
+    public TBuilding() {
 
         this.id = null;
         this.name = null;
