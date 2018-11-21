@@ -27,7 +27,8 @@ CREATE TABLE `t_building` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8 COMMENT='楼盘主表';
 ```
-JPA Entity 生成：[链接](/blob/master/src/test/java/TZiboBuilding.java/)
+JPA Entity 生成：
+[链接](/blob/master/src/test/java/TZiboBuilding.java/)
 
 ## 下载安装
 1. 启动 IntelliJ IDEA
