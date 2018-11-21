@@ -1,5 +1,5 @@
-package org.liujing.generator;
-
+import org.junit.Test;
+import org.liujing.generator.Generator;
 import org.liujing.generator.convert.java.ClassConvert;
 import org.liujing.generator.convert.sql.TableConvert;
 import org.liujing.generator.object.java.ClassObject;
@@ -54,7 +54,8 @@ public class Main {
             "  KEY `refresh_index_1` (`house_id`,`remain_refresh_count`,`active`,`refresh_type`) USING BTREE,\n" +
             ") ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='楼盘主表';";
 
-    public static void main(String... args) {
+    @Test
+    public void testGen() {
         TableObject tableObject = TableConvert.convertToTableObject(testDDLStr);
         ClassObject classObject = ClassConvert.convertToClassObject(tableObject);
         String gen = new Generator().gen(classObject);
