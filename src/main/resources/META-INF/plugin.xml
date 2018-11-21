@@ -1,0 +1,28 @@
+<idea-plugin>
+    <id>org.liujing.generator</id>
+    <name>MySQL DDL To Domain POJO</name>
+    <vendor email="liujingtech@gmail.com" url="http://www.liujing.org">Liu Jing</vendor>
+
+    <description><![CDATA[
+    Copy MySQL Create Table Statement<br>
+    <em>Easy to use to create Domain POJO without hibernate</em>
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <action id="org.liujing.generator.FormatAction" class="org.liujing.generator.FormatAction" text="format"
+                description="format desc">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl x"/>
+        </action>
+    </actions>
+</idea-plugin>
