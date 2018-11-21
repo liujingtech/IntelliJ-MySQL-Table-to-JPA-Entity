@@ -1,6 +1,6 @@
 
 # intellij-mysql-table-to-jpa-entity
-🎉🎉一个简单易用的 Mysql table 转换到 JPA entity 的 intelliJ 插件🎉🎉
+🎉一个简单易用的 Mysql table 转换到 JPA entity 的 intelliJ 插件
 
 ## 特性
 使用 MySql 创建表的语句，生成符合 JPA 要求的 Entity。
