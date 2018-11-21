@@ -27,8 +27,17 @@ CREATE TABLE `t_building` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8 COMMENT='楼盘主表';
 ```
-JPA Entity 生成：[链接](/src/test/java/TZiboBuilding.java/)
+JPA Entity 生成：[链接](/blob/master/src/test/java/TZiboBuilding.java/)
 
-## 下载
-https://plugins.jetbrains.com/plugin/11350-mysql-table-to-jpa-entity
+## 下载并安装
+1. 启动 IntelliJ IDEA
+2. 主菜单栏中点击 Preferences.
+3. 左侧点击 Plugins
+4. 在打开的右侧窗口找到 Install plugin from disk.
+5. 在弹出的文件管理器中找到在[链接下载](https://plugins.jetbrains.com/plugin/11350-mysql-table-to-jpa-entity)的 Jar
 
+## 使用方式
+1. 从客户端软件中**复制**创建表语句，类似[释例](#释例)
+2. 在 IntelliJ IDEA 中使用快捷键 Ctrl + Shift + X
+3. 会弹出窗口确认生成成功
+4. 在合适的位置粘贴即可
