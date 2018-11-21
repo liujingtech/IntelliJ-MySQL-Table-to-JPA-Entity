@@ -29,7 +29,7 @@ CREATE TABLE `t_building` (
 ```
 JPA Entity 生成：[链接](/blob/master/src/test/java/TZiboBuilding.java/)
 
-## 下载并安装
+## 下载安装
 1. 启动 IntelliJ IDEA
 2. 主菜单栏中点击 Preferences.
 3. 左侧点击 Plugins
