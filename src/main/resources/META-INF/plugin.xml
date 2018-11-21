@@ -1,11 +1,10 @@
 <idea-plugin>
-    <id>org.liujing.generator</id>
-    <name>MySQL DDL To Domain POJO</name>
+    <id>org.liujing.entity</id>
+    <name>mysql-table-to-jpa-entity</name>
     <vendor email="liujingtech@gmail.com" url="http://www.liujing.org">Liu Jing</vendor>
 
     <description><![CDATA[
-    Copy MySQL Create Table Statement<br>
-    <em>Easy to use to create Domain POJO without hibernate</em>
+    <em>Very easy to convert MySql table to JPA entity</em>
     ]]></description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
@@ -13,6 +12,9 @@
     <!-- uncomment to enable plugin in all products
     <depends>com.intellij.modules.lang</depends>
     -->
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
