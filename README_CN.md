@@ -60,3 +60,18 @@ My
 
 以上几种方式的步骤是在 mac 上的步骤。如果是其他软件、其他平台，操作可能略有不同。在选中表之后，总会有地方显示**标准建表语句**，花点心思找到即可。
 
+## LICENSE
+
+    Copyright (c) 2016-present, RxJava Contributors.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
