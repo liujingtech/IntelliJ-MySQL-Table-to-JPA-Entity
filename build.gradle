@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'org.liujing'
-version '1.0-SNAPSHOT'
+version '1.0'//-SNAPSHOT
 
 sourceCompatibility = 1.8
 
@@ -24,8 +24,8 @@ intellij {
 }
 patchPluginXml {
     changeNotes """
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>"""
+      完善了介绍部分<br>
+      <em>如果看不到下载地址，请登录试试</em>"""
 }
 intellij {
     sandboxDirectory = "$project.buildDir/myCustom-sandbox"

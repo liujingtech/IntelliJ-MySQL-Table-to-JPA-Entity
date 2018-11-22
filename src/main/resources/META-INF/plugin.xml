@@ -7,86 +7,14 @@
     <h1 id="">intellij-mysql-table-to-jpa-entity</h1>
 
 <p>🎉一个简单易用的 MySQL table 转换到 JPA Entity 的 intelliJ 插件。</p>
+</br>
+<p>这是一个轻量的无需配置的不需界面操作插件，如果你只是想快速地将一个 MySQL Table 转换成 JPA 的 Entity。那么你就应该试试它。</p>
 
-<h2 id="">特性</h2>
-
-<p>使用 MySql 创建表的语句，生成符合 JPA 要求的 Entity。</p>
-
-<ul>
-<li>支持 类注解 @Entity</li>
-
-<li>根据 Table name 生成类注解 @Table(name = "table_name")</li>
-
-<li>根据 Table 注释转换成类注释</li>
-
-<li>根据 Column 注释转换成成员注释</li>
-
-<li>根据 Column 名生成对应的成员变量名，转换为小驼峰命名风格</li>
-
-<li>根据 PRIMARY KEY 生成对应的 @Id </li>
-
-<li>根据 AUTO_INCREMENT 生成对应字段的 @GeneratedValue(strategy = GenerationType.AUTO) 注解</li>
-
-<li>生成成员变量对应的 Getter/Setter 方法，同时按照 JavaBean 规范处理了 boolean 类型使用了 is 开头的变量名所对应的 Getter/Setter 方法</li>
-
-<li>根据 Column 所声明的 DEFAULT 值，转换到无参构造函数中初始化</li>
-</ul>
-
-<h2 id="-1">例子</h2>
-
-<p>MySQL <strong>标准建表语句</strong>：</p>
-
-<pre><code class="sql language-sql">CREATE TABLE `t_building` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键 ID',
-  `name` varchar(50) NOT NULL COMMENT '名字',
-  `sale_status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '销售状态 1-在售， 2-待售， 3-售罄',
-  `floor_space` bigint(11) DEFAULT '0' COMMENT '占地面积:单位平方分米',
-  `card_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '发证时间',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8 COMMENT='楼盘主表';
-</code></pre>
-
-<p>JPA Entity ：
-根据以上语句生成后的 Entity 完整代码<a href="/src/test/java/TBuilding.java">链接</a></p>
-
-<h2 id="-2">标准建表语句</h2>
-
-<p>可以在各种MySQL客户端找到，以下是常用的几种客户端获取方式</p>
-
-<ul>
-<li>Sequel Pro：进入数据库，左侧点击选择表，右侧上方菜单栏选择 Table Info，右侧下方在 Create syntax 出现<strong>标准建表语句</strong>。
-My
-
-
-<ul>
-<li>MySQL Workbench：进入数据库，左侧选择表，右键表名，弹出的菜单中选择，Copy to Clipboard -> Create Statement，此时<strong>标准建表语句</strong>已经存在剪贴板中</li>
-
-<li>Navicat for MySQL：建立数据源链接，双击打开数据库，下拉左侧 Table ，左键选择表，在右侧上方菜单中找到 DDL 并点击，<strong>标准建表语句</strong>会出现在右侧窗口中。</li></ul>
-</li>
-</ul>
-
-<p>以上几种方式的步骤都是我在 mac 上装好的试出来步骤。如果是其他软件、其他平台，大致方式是一样的。在选中表之后，总会有地方显示<strong>标准建表语句</strong>，花点心思找到即可。</p>
-
-<h2 id="-3">下载安装</h2>
-
-<ol>
-<li>IntelliJ IDEA官网下载<a href="https://plugins.jetbrains.com/plugin/11350-mysql-table-to-jpa-entity">插件</a></li>
-
-<li>启动 IntelliJ IDEA</li>
-
-<li>主菜单栏中点击 Preferences.</li>
-
-<li>左侧点击 Plugins</li>
-
-<li>在打开的右侧窗口找到 Install plugin from disk.</li>
-
-<li>在弹出的文件管理器中找到下载完成的 Jar</li>
-</ol>
 
 <h2 id="-4">使用方式</h2>
 
 <ol>
-<li>从客户端软件中<strong>复制</strong>创建表语句，类似<a href="#释例">释例</a></li>
+<li>从客户端软件中<strong>复制</strong>创建表语句，类似<a href="https://github.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity/blob/master/README_CN.md#%E4%BE%8B%E5%AD%90">释例</a></li>
 
 <li>在 IntelliJ IDEA 中使用快捷键 Ctrl + Shift + X</li>
 
