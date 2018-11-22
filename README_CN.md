@@ -37,25 +37,25 @@ JPA Entity ：
 生成后的 Entity [完整代码](/src/test/java/TBuilding.java)
 
 ## 标准建表语句
-可以在各种MySQL客户端找到，以下是常用的几种客户端获取方式
+可以在各种 MySQL 客户端找到，常用的几种获取方式：
 
  - Sequel Pro：进入数据库，左侧点击选择表，右侧上方菜单栏选择 Table Info，右侧下方在 Create syntax 出现**标准建表语句**。
 My 
 - MySQL Workbench：进入数据库，左侧选择表，右键表名，弹出的菜单中选择，Copy to Clipboard -> Create Statement，此时**标准建表语句**已经存在剪贴板中
-- Navicat for MySQL：建立数据源链接，双击打开数据库，下拉左侧 Table ，左键选择表，在右侧上方菜单中找到 DDL 并点击，**标准建表语句**会出现在右侧窗口中。
+- Navicat for MySQL：进入数据库，下拉左侧 Table ，左键选择表，在右侧上方菜单中找到 DDL 并点击，**标准建表语句**会出现在右侧窗口中。
 
-以上几种方式的步骤都是我在 mac 上装好的试出来步骤。如果是其他软件、其他平台，大致方式是一样的。在选中表之后，总会有地方显示**标准建表语句**，花点心思找到即可。
+以上几种方式的步骤是在 mac 上的步骤。如果是其他软件、其他平台，操作可能略有不同。在选中表之后，总会有地方显示**标准建表语句**，花点心思找到即可。
 
 ## 下载安装
-1. IntelliJ IDEA官网下载[插件](https://plugins.jetbrains.com/plugin/11350-mysql-table-to-jpa-entity)
-2. 启动 IntelliJ IDEA
+1. IntelliJ IDEA 官网下载[插件](https://plugins.jetbrains.com/plugin/11350-mysql-table-to-jpa-entity)
+2. 启动 IntelliJ IDEA。
 3. 主菜单栏中点击 Preferences.
-4. 左侧点击 Plugins
+4. 左侧点击 Plugins。
 5. 在打开的右侧窗口找到 Install plugin from disk.
-6. 在弹出的文件管理器中找到下载完成的 Jar
+6. 在弹出的文件管理器中找到下载完成的 Jar。
 
 ## 使用方式
-1. 从客户端软件中复制[标准建表语句](#例子)
-2. 在 IntelliJ IDEA 中使用快捷键 Ctrl + Shift + X
-3. 会弹出窗口确认生成成功
-4. 在合适的位置粘贴即可
+1. 从 MySQL 客户端软件中复制[标准建表语句](#例子)。
+2. 在 IntelliJ IDEA 中使用快捷键 Ctrl + Shift + X。
+3. 会弹出窗口确认生成成功。
+4. 在合适的位置粘贴即可。
