@@ -1,4 +1,5 @@
 
+
 # intellij-mysql-table-to-jpa-entity
 An easy-to-use MySQL table to convert to JPA Entity's intelliJ plugin.[中文介绍](/README_CN.md/)
 
@@ -17,7 +18,7 @@ Using MySQL **Standard Create table statement** to generate a JPA Entity.
 - Generate a Getter/Setter method for the property. Handling boolean type method names with variable names starting with is in accordance with [Java Bean Specification] (https://docs.oracle.com/cd/E19798-01/821-1841/bnbqc/index.htm).
 - Generate a no-argument constructor and initialize it based on the DEFAULT value declared by Column.
 
-## example
+## Example
 MySQL **Standard Create table statement**:
 ```sql
 CREATE TABLE `t_building` (
@@ -37,13 +38,13 @@ Can be found in a variety of MySQL clients, the following are commonly used clie
 
  - Sequel Pro: Enter the database, click on the selection table on the left, select Table Info on the menu bar on the upper right, and **Standard build statement** in the Create syntax on the right side.
 My
-- MySQL Workbench: enter the database, select the table on the left, right-click the table name, select from the pop-up menu, Copy to Clipboard -> Create Statement, at this time ** standard table statement ** already exists in the clipboard
+- MySQL Workbench: enter the database, select the table on the left, right-click the table name, select from the pop-up menu, Copy to Clipboard -> Create Statement, at this time **Standard build statement** already exists in the clipboard
 - Navicat for MySQL: Create a data source link, double-click to open the database, drop the left table, left click to select the table, find DDL in the upper menu on the right side and click, **Standard form statement** will appear in the right window .
 
 The steps in the above ways are all the steps I tried to install on the mac. If it is other software, other platforms, the general approach is the same. After the table is selected, there will always be a place to display the ** standard form statement **, and you can find it.
 
 ## Download and install
-1. IntelliJ IDEA official website download [plug-in] (https://plugins.jetbrains.com/plugin/11350-mysql-table-to-jpa-entity).
+1. IntelliJ IDEA official website download [plug-in](https://plugins.jetbrains.com/plugin/11350-mysql-table-to-jpa-entity).
 2. Start IntelliJ IDEA.
 3. Click Preferences in the main menu bar.
 4. Click Plugins on the left.
@@ -51,7 +52,7 @@ The steps in the above ways are all the steps I tried to install on the mac. If 
 6. Find the downloaded jar in the file manager that pops up.
 
 ## How to use
-1. Copy **Standard Create table statement** from the client software.
+1. Copy **Standard Create table statement** from the MySQL client software.
 2. Use shortcut keys in IntelliJ IDEA Ctrl + Shift + X.
 3. A pop-up window will confirm that the build was successful.
 4. Paste in the right place.
