@@ -15,7 +15,7 @@ This is a lightweight, no-configuration interface-free plugin if you just want t
 6. Find the downloaded jar in the file manager that pops up.
 
 ## How to use
-1. Copy **Standard Create table statement** from the MySQL client software.
+1. Copy [Standard Create table statement](https://github.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity#standard-create-table-statement) from the MySQL client software.
 2. Use shortcut keys in IntelliJ IDEA Ctrl + Shift + X.
 3. A pop-up window will confirm that the build was successful.
 4. Paste in the right place.
@@ -28,10 +28,10 @@ Using MySQL **Standard Create table statement** to generate a JPA Entity.
 - generate class comments based on table annotations.
 - Generate property annotations based on column annotations.
 - Generate property name based on column name, converted to small hump naming style.
-- Generate property Type based on column type, in accordance with [MySQL Specification] (https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-type-conversions.html).
+- Generate property Type based on column type, in accordance with [MySQL Specification](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-type-conversions.html).
 - Generate @Id based on PRIMARY KEY.
 - Generate @GeneratedValue(strategy = GenerationType.AUTO) based on AUTO_INCREMENT
-- Generate a Getter/Setter method for the property. Handling boolean type method names with variable names starting with is in accordance with [Java Bean Specification] (https://docs.oracle.com/cd/E19798-01/821-1841/bnbqc/index.htm).
+- Generate a Getter/Setter method for the property. Handling boolean type method names with variable names starting with is in accordance with [Java Bean Specification](https://docs.oracle.com/cd/E19798-01/821-1841/bnbqc/index.htm).
 - Generate a no-argument constructor and initialize it based on the DEFAULT value declared by Column.
 
 ## Example
