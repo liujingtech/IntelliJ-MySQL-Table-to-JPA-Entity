@@ -1,11 +1,14 @@
 
 
 
+
 # intellij-mysql-table-to-jpa-entity
 🎉一个简单易用的 MySQL table 转换到 JPA Entity 的 intelliJ 插件。
 
+这是一个轻量的无需配置的不需界面操作插件，如果你只是想快速地将一个 MySQL Table 转换成 JPA 的 Entity。那么你就应该试试它。
+
 ## 特性
-使用 MySql 创建表的语句，生成符合 JPA 要求的 Entity。
+使用 MySql [标准建表语句](#例子)，生成符合 JPA 要求的 Entity。
 
 - 生成 class 注解 @Entity
 - 根据 table name 生成 class 的 @Table(name = "table_name")
