@@ -73,12 +73,17 @@ public class MemberConvert {
             result = "new java.util.Date()";
         } else if ("''".equalsIgnoreCase(defaultStr)) {
             result = "\"\"";
-        } else if ("'0'".equalsIgnoreCase(defaultStr)) {
-            if ("Long".equalsIgnoreCase(TypeMaping.getJavaTypeByDDLType(columnObject.getType()))) {
-                result = "0L";
-            } else {
-                result = "0";
+        } else {
+            String javaType = TypeMaping.getJavaTypeByDDLType(columnObject.getType());
+            if ("Long".equalsIgnoreCase(javaType) || "Integer".equalsIgnoreCase(javaType)) {
+                if (defaultStr != null && defaultStr.length() >= 2) {
+                    defaultStr = defaultStr.substring(1, defaultStr.length() - 1);
+                    if ("Long".equalsIgnoreCase(javaType)) {
+                        defaultStr += "L";
+                    }
+                }
             }
+            result = defaultStr;
         }
         return result;
     }

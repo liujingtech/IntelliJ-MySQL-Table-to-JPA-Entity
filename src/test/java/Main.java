@@ -16,6 +16,7 @@ public class Main {
             "  `name` varchar(50) NOT NULL COMMENT '名字',\n" +
             "  `sale_status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '销售状态 1-在售， 2-待售， 3-售罄',\n" +
             "  `floor_space` bigint(11) DEFAULT '0' COMMENT '占地面积:单位平方分米',\n" +
+            "  `building_sort` int(11) DEFAULT '999' COMMENT '排序 999-普通排序，1,2,....10(数字越小越靠前)',\n" +
             "  `card_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '发证时间',\n" +
             "  PRIMARY KEY (`id`)\n" +
             ") ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8 COMMENT='楼盘主表';";
