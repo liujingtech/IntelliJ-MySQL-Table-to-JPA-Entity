@@ -7,15 +7,16 @@
 ## 特性
 使用 MySql 创建表的语句，生成符合 JPA 要求的 Entity。
 
-- 支持 类注解 @Entity
-- 根据 Table name 生成类注解 @Table(name = "table_name")
-- 根据 Table 注释转换成类注释
-- 根据 Column 注释转换成成员注释
-- 根据 Column 名生成对应的成员变量名，转换为小驼峰命名风格
-- 根据 PRIMARY KEY 生成对应的 @Id 
-- 根据 AUTO_INCREMENT 生成对应字段的 @GeneratedValue(strategy = GenerationType.AUTO) 注解
-- 生成成员变量对应的 Getter/Setter 方法，同时按照 JavaBean 规范处理了 boolean 类型使用了 is 开头的变量名所对应的 Getter/Setter 方法
-- 根据 Column 所声明的 DEFAULT 值，转换到无参构造函数中初始化
+- 生成 class 注解 @Entity
+- 根据 table name 生成 class 的 @Table(name = "table_name")
+- 根据 table 注释生成 class 注释
+- 根据 column 注释生成 property 注释
+- 根据 column name 生成 property name，转换为小驼峰命名风格
+- 根据 column type 生成 property Type，符合[ MySQL 规范](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-type-conversions.html)
+- 根据 PRIMARY KEY 生成 @Id 
+- 根据 AUTO_INCREMENT 生成 @GeneratedValue(strategy = GenerationType.AUTO) 
+- 生成 property 的 Getter/Setter 方法。处理 boolean 类型使用了 is 开头的变量名的方法名称问题，符合[ Java Bean 规范](https://docs.oracle.com/cd/E19798-01/821-1841/bnbqc/index.htm)
+- 根据 Column 所声明的 DEFAULT 值，生成无参构造函数并初始化
 
 ## 例子
 MySQL **标准建表语句**：
@@ -30,7 +31,7 @@ CREATE TABLE `t_building` (
 ) ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8 COMMENT='楼盘主表';
 ```
 JPA Entity ：
-根据以上语句生成后的 Entity 完整代码[链接](/src/test/java/TBuilding.java)
+生成后的 Entity [完整代码](/src/test/java/TBuilding.java)
 
 ## 标准建表语句
 可以在各种MySQL客户端找到，以下是常用的几种客户端获取方式
