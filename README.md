@@ -1,57 +1,54 @@
-
-
-
 # intellij-mysql-table-to-jpa-entity
-🎉一个简单易用的 MySQL table 转换到 JPA Entity 的 intelliJ 插件。
+An easy-to-use MySQL table to convert to JPA Entity's intelliJ plugin.
 
-## 特性
-使用 MySql 创建表的语句，生成符合 JPA 要求的 Entity。
+## Features
+Create a table statement using MySql to generate a JPA-compliant Entity.
 
-- 支持 类注解 @Entity
-- 根据 Table name 生成类注解 @Table(name = "table_name")
-- 根据 Table 注释转换成类注释
-- 根据 Column 注释转换成成员注释
-- 根据 Column 名生成对应的成员变量名，转换为小驼峰命名风格
-- 根据 PRIMARY KEY 生成对应的 @Id 
-- 根据 AUTO_INCREMENT 生成对应字段的 @GeneratedValue(strategy = GenerationType.AUTO) 注解
-- 生成成员变量对应的 Getter/Setter 方法，同时按照 JavaBean 规范处理了 boolean 类型使用了 is 开头的变量名所对应的 Getter/Setter 方法
-- 根据 Column 所声明的 DEFAULT 值，转换到无参构造函数中初始化
+- Support Class Annotations @Entity
+- Generate class annotations based on Table name @Table(name = "table_name")
+- Convert to class annotation based on Table annotation
+- Convert to member comments based on Column comments
+- Generate a corresponding member variable name based on the Column name and convert it to a small hump naming style
+- Generate a corresponding @Id based on PRIMARY KEY
+- Generate @GeneratedValue(strategy = GenerationType.AUTO) annotation for the corresponding field based on AUTO_INCREMENT
+- Generate a Getter/Setter method corresponding to the member variable, and handle the Getter/Setter method corresponding to the variable name of the boolean type starting with is in accordance with the JavaBean specification.
+- Convert to a no-argument constructor based on the DEFAULT value declared by Column
 
-## 例子
-MySQL **标准建表语句**：
+## example
+MySQL ** standard build statement**:
 ```sql
 CREATE TABLE `t_building` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键 ID',
-  `name` varchar(50) NOT NULL COMMENT '名字',
-  `sale_status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '销售状态 1-在售， 2-待售， 3-售罄',
-  `floor_space` bigint(11) DEFAULT '0' COMMENT '占地面积:单位平方分米',
-  `card_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '发证时间',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8 COMMENT='楼盘主表';
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'Primary key ID',
+  `name` varchar(50) NOT NULL COMMENT 'name',
+  `sale_status` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'Sales status 1-on sale, 2-for sale, 3-sales',
+  `floor_space` bigint(11) DEFAULT '0' COMMENT 'Site: Units of square decimeter',
+  `card_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'certification time',
+  PRIMARY KEY (`id`)
+ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8 COMMENT='Property Master';
 ```
-JPA Entity ：
-根据以上语句生成后的 Entity 完整代码[链接](/src/test/java/TBuilding.java)
+JPA Entity :
+Entity complete code [link] generated after the above statement (/src/test/java/TBuilding.java)
 
-## 标准建表语句
-可以在各种MySQL客户端找到，以下是常用的几种客户端获取方式
+## Standard construction statement
+Can be found in a variety of MySQL clients, the following are commonly used client access methods
 
- - Sequel Pro：进入数据库，左侧点击选择表，右侧上方菜单栏选择 Table Info，右侧下方在 Create syntax 出现**标准建表语句**。
-My 
-- MySQL Workbench：进入数据库，左侧选择表，右键表名，弹出的菜单中选择，Copy to Clipboard -> Create Statement，此时**标准建表语句**已经存在剪贴板中
-- Navicat for MySQL：建立数据源链接，双击打开数据库，下拉左侧 Table ，左键选择表，在右侧上方菜单中找到 DDL 并点击，**标准建表语句**会出现在右侧窗口中。
+ - Sequel Pro: Enter the database, click on the selection table on the left, select Table Info on the menu bar on the upper right, and **Standard build statement** in the Create syntax on the right side.
+My
+- MySQL Workbench: enter the database, select the table on the left, right-click the table name, select from the pop-up menu, Copy to Clipboard -> Create Statement, at this time ** standard table statement ** already exists in the clipboard
+- Navicat for MySQL: Create a data source link, double-click to open the database, drop the left table, left click to select the table, find DDL in the upper menu on the right side and click, **Standard form statement** will appear in the right window .
 
-以上几种方式的步骤都是我在 mac 上装好的试出来步骤。如果是其他软件、其他平台，大致方式是一样的。在选中表之后，总会有地方显示**标准建表语句**，花点心思找到即可。
+The steps in the above ways are all the steps I tried to install on the mac. If it is other software, other platforms, the general approach is the same. After the table is selected, there will always be a place to display the ** standard form statement **, and you can find it.
 
-## 下载安装
-1. IntelliJ IDEA官网下载[插件](https://plugins.jetbrains.com/plugin/11350-mysql-table-to-jpa-entity)
-2. 启动 IntelliJ IDEA
-3. 主菜单栏中点击 Preferences.
-4. 左侧点击 Plugins
-5. 在打开的右侧窗口找到 Install plugin from disk.
-6. 在弹出的文件管理器中找到下载完成的 Jar
+## Download and install
+1. IntelliJ IDEA official website download [plug-in] (https://plugins.jetbrains.com/plugin/11350-mysql-table-to-jpa-entity)
+2. Start IntelliJ IDEA
+3. Click Preferences in the main menu bar.
+4. Click Plugins on the left
+5. Locate the Install plugin from disk in the right window that opens.
+6. Find the downloaded jar in the file manager that pops up.
 
-## 使用方式
-1. 从客户端软件中复制[标准建表语句](#例子)
-2. 在 IntelliJ IDEA 中使用快捷键 Ctrl + Shift + X
-3. 会弹出窗口确认生成成功
-4. 在合适的位置粘贴即可
+## How to use
+1. Copy ** from the client software to create a table statement, similar to [release] (#release)
+2. Use shortcut keys in IntelliJ IDEA Ctrl + Shift + X
+3. A pop-up window will confirm that the build was successful.
+4. Paste in the right place
