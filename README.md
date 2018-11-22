@@ -30,7 +30,7 @@ CREATE TABLE `t_building` (
 ) ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8 COMMENT='楼盘主表';
 ```
 JPA Entity ：
-根据以上语句生成后的 Entity 完整代码[链接](/blob/master/src/test/java/TZiboBuilding.java/)
+根据以上语句生成后的 Entity 完整代码[链接](/src/test/java/TBuilding.java)
 
 ## 标准建表语句
 可以在各种MySQL客户端找到，以下是常用的几种客户端获取方式
