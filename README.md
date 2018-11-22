@@ -41,11 +41,12 @@ My
 以上几种方式的步骤都是我在 mac 上装好的试出来步骤。如果是其他软件、其他平台，大致方式是一样的。在选中表之后，总会有地方显示**标准建表语句**，花点心思找到即可。
 
 ## 下载安装
-1. 启动 IntelliJ IDEA
-2. 主菜单栏中点击 Preferences.
-3. 左侧点击 Plugins
-4. 在打开的右侧窗口找到 Install plugin from disk.
-5. 在弹出的文件管理器中找到在[链接下载](https://plugins.jetbrains.com/plugin/11350-mysql-table-to-jpa-entity)的 Jar
+1. IntelliJ IDEA官网下载[插件](https://plugins.jetbrains.com/plugin/11350-mysql-table-to-jpa-entity)
+2. 启动 IntelliJ IDEA
+3. 主菜单栏中点击 Preferences.
+4. 左侧点击 Plugins
+5. 在打开的右侧窗口找到 Install plugin from disk.
+6. 在弹出的文件管理器中找到下载完成的 Jar
 
 ## 使用方式
 1. 从客户端软件中**复制**创建表语句，类似[释例](#释例)
