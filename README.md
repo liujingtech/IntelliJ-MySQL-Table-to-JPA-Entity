@@ -31,7 +31,8 @@ CREATE TABLE `t_building` (
 JPA Entity 生成：
 [根据以上语句生成后的 Entity 完整代码链接](/blob/master/src/test/java/TZiboBuilding.java/)
 
-**标准建表语句**可以在各种MySQL客户端找到，以下是常用的几种客户端获取方式
+##标准建表语句
+可以在各种MySQL客户端找到，以下是常用的几种客户端获取方式
 
  - Sequel Pro：进入数据库，左侧点击选择表，右侧上方菜单栏选择 Table Info，右侧下方在 Create syntax 出现**标准建表语句**。
 My 
