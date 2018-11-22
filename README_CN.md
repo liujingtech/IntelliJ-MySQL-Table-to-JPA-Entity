@@ -7,6 +7,20 @@
 
 这是一个轻量的无需配置的不需界面操作插件，如果你只是想快速地将一个 MySQL Table 转换成 JPA 的 Entity。那么你就应该试试它。
 
+## 下载安装
+1. IntelliJ IDEA 官网下载[插件](https://plugins.jetbrains.com/plugin/11350-mysql-table-to-jpa-entity)
+2. 启动 IntelliJ IDEA。
+3. 主菜单栏中点击 Preferences.
+4. 左侧点击 Plugins。
+5. 在打开的右侧窗口找到 Install plugin from disk.
+6. 在弹出的文件管理器中找到下载完成的 Jar。
+
+## 使用方式
+1. 从 MySQL 客户端软件中复制[标准建表语句](#例子)。
+2. 在 IntelliJ IDEA 中使用快捷键 Ctrl + Shift + X。
+3. 会弹出窗口确认生成成功。
+4. 在合适的位置粘贴即可。
+
 ## 特性
 使用 MySql [标准建表语句](#例子)，生成符合 JPA 要求的 Entity。
 
@@ -46,16 +60,3 @@ My
 
 以上几种方式的步骤是在 mac 上的步骤。如果是其他软件、其他平台，操作可能略有不同。在选中表之后，总会有地方显示**标准建表语句**，花点心思找到即可。
 
-## 下载安装
-1. IntelliJ IDEA 官网下载[插件](https://plugins.jetbrains.com/plugin/11350-mysql-table-to-jpa-entity)
-2. 启动 IntelliJ IDEA。
-3. 主菜单栏中点击 Preferences.
-4. 左侧点击 Plugins。
-5. 在打开的右侧窗口找到 Install plugin from disk.
-6. 在弹出的文件管理器中找到下载完成的 Jar。
-
-## 使用方式
-1. 从 MySQL 客户端软件中复制[标准建表语句](#例子)。
-2. 在 IntelliJ IDEA 中使用快捷键 Ctrl + Shift + X。
-3. 会弹出窗口确认生成成功。
-4. 在合适的位置粘贴即可。
