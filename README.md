@@ -5,15 +5,16 @@ An easy-to-use MySQL table to convert to JPA Entity's intelliJ plugin.[中文介
 ## Features
 Create a table statement using MySql to generate a JPA-compliant Entity.
 
-- Support Class Annotations @Entity
-- Generate class annotations based on Table name @Table(name = "table_name")
-- Convert to class annotation based on Table annotation
-- Convert to member comments based on Column comments
-- Generate a corresponding member variable name based on the Column name and convert it to a small hump naming style
-- Generate a corresponding @Id based on PRIMARY KEY
-- Generate @GeneratedValue(strategy = GenerationType.AUTO) annotation for the corresponding field based on AUTO_INCREMENT
-- Generate a Getter/Setter method corresponding to the member variable, and handle the Getter/Setter method corresponding to the variable name of the boolean type starting with is in accordance with the JavaBean specification.
-- Convert to a no-argument constructor based on the DEFAULT value declared by Column
+- Generate class annotation @Entity
+- @Table(name = "table_name") that generates a class based on table name
+- generate class comments based on table annotations
+- Generate property annotations based on column annotations
+- Generate property name based on column name, converted to small hump naming style
+- Generate property Type based on column type, in accordance with [MySQL Specification] (https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-type-conversions.html)
+- Generate @Id based on PRIMARY KEY
+- Generate @GeneratedValue(strategy = GenerationType.AUTO) based on AUTO_INCREMENT
+- Generate a Getter/Setter method for the property. Handling boolean type method names with variable names starting with is in accordance with [Java Bean Specification] (https://docs.oracle.com/cd/E19798-01/821-1841/bnbqc/index.htm)
+- Generate a no-argument constructor and initialize it based on the DEFAULT value declared by Column
 
 ## example
 MySQL ** standard build statement**:
