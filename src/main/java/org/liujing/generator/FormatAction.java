@@ -46,10 +46,10 @@ public class FormatAction extends BaseGenerateAction {
                     StringSelection stringSelection = new StringSelection(str);
                     clipboard.setContents(stringSelection, null);
                     // 弹出成功对话窗口
-                    Messages.showMessageDialog(event.getProject(), "已经生成到剪贴板，粘贴即可使用", "", Messages.getInformationIcon());
+                    Messages.showMessageDialog(event.getProject(), "Successfully generated to the clipboard, paste can be used", "", Messages.getInformationIcon());
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Messages.showMessageDialog(event.getProject(), "生成失败，请检查是否复制了正确的SQL语句", "", Messages.getInformationIcon());
+                    Messages.showMessageDialog(event.getProject(), "The build failed, please check if the correct Create table SQL is copied.", "", Messages.getInformationIcon());
                 }
             }
         }

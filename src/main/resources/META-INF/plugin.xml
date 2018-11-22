@@ -4,24 +4,22 @@
     <vendor email="liujingtech@gmail.com" url="http://www.liujing.org">Liu Jing</vendor>
 
     <description><![CDATA[
-    <h1 id="">intellij-mysql-table-to-jpa-entity</h1>
-
-<p>🎉一个简单易用的 MySQL table 转换到 JPA Entity 的 intelliJ 插件。</p>
-</br>
-<p>这是一个轻量的无需配置的不需界面操作插件，如果你只是想快速地将一个 MySQL Table 转换成 JPA 的 Entity。那么你就应该试试它。</p>
-
-
-<h2 id="-4">使用方式</h2>
-
+🎉Very easy to convert MySql table to JPA entity.
+</br></br>
+一个简单易用的 MySQL table 转换到 JPA Entity 的插件。<a href="https://github.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity/blob/master/README_CN.md">中文介绍</a>
+<br><br>
+This is a lightweight, no-configuration interface-free plugin.if you just want to quickly convert a MySQL Table to JPA Entity. Then you CAN try it.
+</br></br>
+How to use
 <ol>
-<li>从客户端软件中<strong>复制</strong>创建表语句，类似<a href="https://github.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity/blob/master/README_CN.md#%E4%BE%8B%E5%AD%90">释例</a></li>
-
-<li>在 IntelliJ IDEA 中使用快捷键 Ctrl + Shift + X</li>
-
-<li>会弹出窗口确认生成成功</li>
-
-<li>在合适的位置粘贴即可</li>
+<li>Copy <a href="https://github.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity#standard-create-table-statement">Standard Create table statement</a> from the MySQL client software.</li>
+<li>Use shortcut keys in IntelliJ IDEA Ctrl + Shift + X.</li>
+<li>A pop-up window will confirm that the build was successful.</li>
+<li>Paste in the right place.</li>
 </ol>
+<br><br>
+More Infomation please visit in <a href="https://github.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity">github</a>
+<br><br>
     ]]></description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
