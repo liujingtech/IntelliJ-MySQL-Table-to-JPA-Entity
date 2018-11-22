@@ -163,7 +163,7 @@ public class Generator {
 
     @NotNull
     private String genGetterAndSetter(MemberObject memberObject) {
-        String sb = String.format(
+        return String.format(
                 "\n\tpublic %s get%s() {" +
                         "\n\t\treturn %s;" +
                         "\n\t}\n"
@@ -178,24 +178,22 @@ public class Generator {
                         , memberObject.getName()
                         , getParmName(memberObject)
                 );
-        return sb;
     }
 
     @NotNull
     private String genConstructor(ClassObject classObject) {
-        String sb = String.format(
+        return String.format(
                 "\n\tpublic %s() {" +
-                        "\n\t\t%s" +
+                        "%s" +
                         "\n\t}\n", classObject.getName(), getDefaultMember(classObject)
         );
-        return sb;
     }
 
     @NotNull
     private String getDefaultMember(ClassObject classObject) {
         StringBuilder sb = new StringBuilder();
         classObject.getMemberObjectList().forEach(memberObject -> {
-            sb.append(String.format("\n\tthis.%s = %s;", memberObject.getName(), memberObject.getDefaultValue()));
+            sb.append(String.format("\n\t\tthis.%s = %s;", memberObject.getName(), memberObject.getDefaultValue()));
         });
         return sb.toString();
     }

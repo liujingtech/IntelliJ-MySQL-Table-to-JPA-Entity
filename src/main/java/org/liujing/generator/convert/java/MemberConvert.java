@@ -70,7 +70,8 @@ public class MemberConvert {
         String result = null;
         String defaultStr = columnObject.getDefaultStr();
         if ("CURRENT_TIMESTAMP".equalsIgnoreCase(defaultStr)) {
-            result = "new java.util.Date()";
+//            result = "new java.util.Date()";
+            result = "new Date()";
         } else if ("''".equalsIgnoreCase(defaultStr)) {
             result = "\"\"";
         } else {
