@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'org.liujing'
-version '1.0'//-SNAPSHOT
+version '1.0.1'//-SNAPSHOT
 
 sourceCompatibility = 1.8
 
@@ -24,7 +24,7 @@ intellij {
 }
 patchPluginXml {
     changeNotes """
-      <br>
+      Updates English version.<br>
       <em></em>"""
 }
 intellij {
