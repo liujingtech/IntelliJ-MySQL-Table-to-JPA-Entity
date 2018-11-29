@@ -59,13 +59,13 @@ public class TableConvert {
 
 
     private static String getTableComment(String str) {
-        String pattern = "CREATE TABLE [\\s\\S]*\\)[\\s\\S]*COMMENT='(\\S*)'";
+        String pattern = "CREATE TABLE [\\s\\S]*\\)[\\s\\S]*COMMENT='([\\S\\s]*)'";
         Pattern r = Pattern.compile(pattern);
         Matcher m = r.matcher(str);
         if (m.find()) {
             return m.group(1);
         } else {
-            throw new IllegalArgumentException("无法找到表名");
+            throw new IllegalArgumentException("无法找到表注释");
         }
     }
 
