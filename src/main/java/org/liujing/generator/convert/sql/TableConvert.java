@@ -76,7 +76,7 @@ public class TableConvert {
         if (m.find()) {
             return m.group(1).trim();
         } else {
-            throw new IllegalArgumentException("无法找到表");
+            throw new IllegalArgumentException("无法找到字段字符串");
         }
     }
 
