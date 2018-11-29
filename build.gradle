@@ -4,6 +4,8 @@ plugins {
     id 'org.jetbrains.intellij' version '0.3.12'
 }
 
+apply plugin: 'jacoco'
+
 group 'org.liujing'
 version '1.0.2-SNAPSHOT'
 
@@ -19,14 +21,20 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
+}
+
 intellij {
     intellij.updateSinceUntilBuild false
+    sandboxDirectory = "$project.buildDir/myCustom-sandbox"
 }
+
 patchPluginXml {
     changeNotes """
       Updates English version.<br>
       <em></em>"""
-}
-intellij {
-    sandboxDirectory = "$project.buildDir/myCustom-sandbox"
 }

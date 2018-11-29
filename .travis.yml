@@ -1,4 +1,12 @@
 language: java
+
 before_script:
 - chmod a+x gradlew
-script: ./gradlew jar
+
+script:
+- ./gradlew jar
+- ./gradlew check
+- ./gradlew codeCoverageReport
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)
