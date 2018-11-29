@@ -17,10 +17,4 @@ public class Util {
         }
         return CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, str);
     }
-    public static String toLowerUnderscore(String str) {
-        if (str == null) {
-            return null;
-        }
-        return CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, str);
-    }
 }
