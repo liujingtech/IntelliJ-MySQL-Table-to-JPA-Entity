@@ -1,8 +1,4 @@
-
-
-
-
-# intellij-mysql-table-to-jpa-entity
+# intellij-mysql-table-to-jpa-entity [![Build Status](https://travis-ci.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity.svg?branch=master)](https://travis-ci.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity)
 🎉一个简单易用的 MySQL table 转换到 JPA Entity 的 intelliJ 插件。
 
 这是一个轻量的无需配置的不需界面操作插件，如果你只是想快速地将一个 MySQL Table 转换成 JPA 的 Entity。那么你就应该试试它。
