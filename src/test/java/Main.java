@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Test;
 import org.liujing.generator.Generator;
 import org.liujing.generator.convert.java.ClassConvert;
@@ -25,12 +26,17 @@ public class Main {
         TableObject tableObject = TableConvert.convertToTableObject(testDDLStr);
         ClassObject classObject = ClassConvert.convertToClassObject(tableObject);
         String gen = new Generator().gen(classObject);
-        System.out.println(gen);
+        Assert.assertNotNull("最后输出不能为空", gen);
 
-        // 获取系统剪贴板
-        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-        StringSelection stringSelection = new StringSelection(gen);
-        clipboard.setContents(stringSelection, null);
+        try {
+            // 获取系统剪贴板
+            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+            StringSelection stringSelection = new StringSelection(gen);
+            clipboard.setContents(stringSelection, null);
+        } catch (HeadlessException e) {
+            //在 travis-ci 系统上无法获取剪贴板
+            e.printStackTrace();
+        }
     }
 
 }
