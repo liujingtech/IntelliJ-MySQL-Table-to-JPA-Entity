@@ -65,16 +65,4 @@ public class ColumnObject {
         this.comment = comment;
     }
 
-    @Override
-    public String toString() {
-        return "ColumnObject{" +
-                "name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                ", allowNull=" + allowNull +
-                ", identity=" + identity +
-                ", autoIncrement=" + autoIncrement +
-                ", defaultStr='" + defaultStr + '\'' +
-                ", comment='" + comment + '\'' +
-                '}';
-    }
 }

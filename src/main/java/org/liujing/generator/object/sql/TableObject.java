@@ -31,12 +31,4 @@ public class TableObject {
         this.comment = comment;
     }
 
-    @Override
-    public String toString() {
-        return "TableObject{" +
-                "name='" + name + '\'' +
-                ", columnObjectList=" + columnObjectList +
-                ", comment='" + comment + '\'' +
-                '}';
-    }
 }
