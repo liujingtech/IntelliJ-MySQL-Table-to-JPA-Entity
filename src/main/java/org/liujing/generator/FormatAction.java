@@ -41,7 +41,7 @@ public class FormatAction extends BaseGenerateAction {
                     // 生成 POJO 文本
                     TableObject tableObject = TableConvert.convertToTableObject(text);
                     ClassObject classObject = ClassConvert.convertToClassObject(tableObject);
-                    String str = new Generator().gen(classObject);
+                    String str = new Generator().formatPOJOString(classObject);
                     // 设置到剪贴板中
                     StringSelection stringSelection = new StringSelection(str);
                     clipboard.setContents(stringSelection, null);

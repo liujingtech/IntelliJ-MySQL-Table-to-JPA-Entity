@@ -8,9 +8,17 @@ import org.liujing.generator.object.java.MemberObject;
 
 import java.util.*;
 
+/**
+ * 生成器
+ * <p>
+ * 根据 Annotation Object 和 Class Object 和 Member Object 类型的值，生成一个 POJO 对象
+ */
 public class Generator {
 
-    public String gen(ClassObject classObject) {
+    /**
+     * 格式化 POJO 字符串
+     */
+    public String formatPOJOString(ClassObject classObject) {
 
         return String.format(
                 "%s\n"
@@ -19,37 +27,28 @@ public class Generator {
                         + "\n */"
                         + "%s\n"
                         + "public class %s {\n%s}"
-                , genImport(classObject)
+                , formatImportPackage(classObject)
                 , classObject.getComment()
-                , genClassAnnotation(classObject.getAnnotationList())
+                , formatClassAnnotation(classObject.getAnnotationList())
                 , classObject.getName()
-                , genBody(classObject)
+                , formatBody(classObject)
         );
     }
 
+    /**
+     * 获取 导入包 模块的字符串
+     */
     @NotNull
-    private String genImport(ClassObject classObject) {
+    private String formatImportPackage(ClassObject classObject) {
         //通过 Set 来排除相同元素
         Set<String> importSet = new HashSet<>();
 
-        //声明在 class 上的 Annotation
-        List<AnnotationObject> classAnnotationList = classObject.getAnnotationList();
         // 设置 class 的 Annotation
-        setImportSetByAnnotationList(importSet, classAnnotationList);
+        setImportSetByAnnotationList(importSet, classObject.getAnnotationList());
         //Member 的包名
-        classObject.getMemberObjectList().forEach(memberObject -> {
-            //如果 Member 的类型需要引入包名
-            String typeName = memberObject.getTypeName();
-            if (!typeName.contains(".")) {
-                return;
-            }
-            importSet.add(typeName);
+        setImportSetByMemberType(importSet, classObject);
 
-            //如果 Member 声明的 Annotation 需要引入包名
-            List<AnnotationObject> menberAnnotationList = memberObject.getAnnotationList();
-            // 设置 member 的 Annotation
-            setImportSetByAnnotationList(importSet, menberAnnotationList);
-        });
+        setImportSetByMemberAnnotationList(importSet, classObject.getMemberObjectList());
 
         //排序
         List<String> sortedList = new ArrayList<>(importSet);
@@ -62,52 +61,41 @@ public class Generator {
                     )
             );
         });
-//        //如果大于一个import 换行
-//        if (sb.length() > 0) {
-//            sb.append("\n");
-//        }
         return sb.toString();
     }
 
-    private void setImportSetByAnnotationList(Set<String> importSet, List<AnnotationObject> classAnnotationList) {
-        if (classAnnotationList != null) {
-            classAnnotationList.forEach(annotationObject -> {
-                String fullName = annotationObject.getFullName();
-                if (!fullName.contains(".")) {
-                    return;
-                }
-                importSet.add(fullName);
-            });
-        }
-    }
-
     /**
-     * 和 genMemberAnnotation 的唯一区别在于为了格式化有个缩进
+     * 生成类的注解
+     * 和 formatMemberAnnotation 的唯一区别在于为了格式化没有缩进
      */
     @NotNull
-    private StringBuilder genClassAnnotation(List<AnnotationObject> annotationObjectList) {
+    private StringBuilder formatClassAnnotation(List<AnnotationObject> annotationObjectList) {
         StringBuilder stringBuilder = new StringBuilder();
         annotationObjectList.forEach(annotation -> {
             stringBuilder.append("\n@").append(annotation.getName());//@javax.persistence.EntityListeners
-            genAnnotationCore(stringBuilder, annotation);
+            formatAnnotationCore(stringBuilder, annotation);
         });
         return stringBuilder;
     }
 
     /**
-     * 和 genClassAnnotation 的唯一区别在于为了格式化有个缩进
+     * 生成成员变量的注解
+     * 和 formatClassAnnotation 的唯一区别在于为了格式化有个缩进
      */
     @NotNull
-    private StringBuilder genMemberAnnotation(List<AnnotationObject> annotationObjectList) {
+    private StringBuilder formatMemberAnnotation(List<AnnotationObject> annotationObjectList) {
         StringBuilder stringBuilder = new StringBuilder();
         annotationObjectList.forEach(annotation -> {
             stringBuilder.append("\n\t@").append(annotation.getName());//@javax.persistence.EntityListeners
-            genAnnotationCore(stringBuilder, annotation);
+            formatAnnotationCore(stringBuilder, annotation);
         });
         return stringBuilder;
     }
 
-    private void genAnnotationCore(StringBuilder stringBuilder, AnnotationObject annotation) {
+    /**
+     * 生成
+     */
+    private void formatAnnotationCore(StringBuilder stringBuilder, AnnotationObject annotation) {
         Map<String, Object> valueMap = annotation.getValue();
         if (valueMap == null)
             return;
@@ -130,23 +118,23 @@ public class Generator {
     }
 
     @NotNull
-    private StringBuilder genBody(ClassObject classObject) {
+    private StringBuilder formatBody(ClassObject classObject) {
         StringBuilder stringBuilder = new StringBuilder();
         //Member
         classObject.getMemberObjectList().forEach(memberObject -> {
-            stringBuilder.append(genMenber(memberObject));
+            stringBuilder.append(formatMenber(memberObject));
         });
         //Getter And Settter
         classObject.getMemberObjectList().forEach(memberObject -> {
-            stringBuilder.append(genGetterAndSetter(memberObject));
+            stringBuilder.append(formatGetterAndSetter(memberObject));
         });
         //default constructor
-        stringBuilder.append(genConstructor(classObject));
+        stringBuilder.append(formatConstructor(classObject));
         return stringBuilder;
     }
 
     @NotNull
-    private String genMenber(MemberObject memberObject) {
+    private String formatMenber(MemberObject memberObject) {
         return String.format(
                 "\n\t/**" +
                         "\n\t * %s" +
@@ -155,33 +143,33 @@ public class Generator {
                         "\n\tprivate %s %s;" +
                         "\n"
                 , memberObject.getComment()
-                , genMemberAnnotation(memberObject.getAnnotationList())
-                , getType(memberObject)
+                , formatMemberAnnotation(memberObject.getAnnotationList())
+                , getMemberType(memberObject)
                 , memberObject.getName()
         );
     }
 
     @NotNull
-    private String genGetterAndSetter(MemberObject memberObject) {
+    private String formatGetterAndSetter(MemberObject memberObject) {
         return String.format(
                 "\n\tpublic %s get%s() {" +
                         "\n\t\treturn %s;" +
                         "\n\t}\n"
-                , getType(memberObject)
+                , getMemberType(memberObject)
                 , getMethodName(memberObject)
                 , memberObject.getName()
         ) +
                 String.format("\n\tpublic void set%s(%s %s) {\n\t\tthis.%s = %s;\n\t}\n"
                         , getMethodName(memberObject)
-                        , getType(memberObject)
-                        , getParmName(memberObject)
+                        , getMemberType(memberObject)
+                        , getMethodParmName(memberObject)
                         , memberObject.getName()
-                        , getParmName(memberObject)
+                        , getMethodParmName(memberObject)
                 );
     }
 
     @NotNull
-    private String genConstructor(ClassObject classObject) {
+    private String formatConstructor(ClassObject classObject) {
         return String.format(
                 "\n\tpublic %s() {" +
                         "%s" +
@@ -199,7 +187,7 @@ public class Generator {
     }
 
     @NotNull
-    private String getType(MemberObject memberObject) {
+    private String getMemberType(MemberObject memberObject) {
         //如果 Member 的类型需要引入包名
         String typeName = memberObject.getTypeName();
         if (!typeName.contains(".")) {
@@ -212,7 +200,7 @@ public class Generator {
      * 统一参数名生成方式
      */
     @NotNull
-    private String getParmName(MemberObject memberObject) {
+    private String getMethodParmName(MemberObject memberObject) {
         return Util.toLowCamelCase(memberObject.getName());
     }
 
@@ -242,4 +230,56 @@ public class Generator {
         }
         return methodName;
     }
+
+    /**
+     * 设置 ImportSet
+     * 从成员变量的注解的全名，获取包名，准备设置到导入包中
+     */
+    private void setImportSetByMemberAnnotationList(Set<String> importSet, List<MemberObject> memberList) {
+        if (memberList == null) {
+            return;
+        }
+        memberList.forEach(memberObject -> {
+            //如果 Member 声明的 Annotation 需要引入包名
+            List<AnnotationObject> menberAnnotationList = memberObject.getAnnotationList();
+            // 设置 member 的 Annotation
+            setImportSetByAnnotationList(importSet, menberAnnotationList);
+        });
+    }
+
+    /**
+     * 设置 ImportSet
+     * 从成员变量的类型，获取包名，准备设置到导入包中
+     */
+    private void setImportSetByMemberType(Set<String> importSet, ClassObject classObject) {
+        if (classObject == null) {
+            return;
+        }
+        classObject.getMemberObjectList().forEach(memberObject -> {
+            //如果 Member 的类型需要引入包名
+            String typeName = memberObject.getTypeName();
+            if (!typeName.contains(".")) {
+                return;
+            }
+            importSet.add(typeName);
+        });
+    }
+
+    /**
+     * 设置 ImportSet
+     * 从成员变量的注解的全名，获取包名，准备设置到导入包中
+     */
+    private void setImportSetByAnnotationList(Set<String> importSet, List<AnnotationObject> anotationList) {
+        if (anotationList == null) {
+            return;
+        }
+        anotationList.forEach(annotationObject -> {
+            String fullName = annotationObject.getFullName();
+            if (!fullName.contains(".")) {
+                return;
+            }
+            importSet.add(fullName);
+        });
+    }
+
 }

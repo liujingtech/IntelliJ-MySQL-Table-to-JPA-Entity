@@ -49,15 +49,5 @@ public class ClassConvert {
         tableMap.put("name", tableObject.getName());
         table.setValue(tableMap);
         defaultAnnotationList.add(table);
-// spring data core
-//        AnnotationObject entityListeners = new AnnotationObject();
-//        entityListeners.setFullName("javax.persistence.EntityListeners");
-//        entityListeners.setName("EntityListeners");
-//        Map<String, Object> entityListenersMap = new HashMap<>();
-//        entityListenersMap.put("", AuditingEntityListener.class);
-//        entityListeners.setValue(entityListenersMap);
-//        defaultAnnotationList.add(entityListeners);
-
     }
-
 }

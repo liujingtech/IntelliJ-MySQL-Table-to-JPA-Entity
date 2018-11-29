@@ -25,7 +25,7 @@ public class Main {
     public void testGen() {
         TableObject tableObject = TableConvert.convertToTableObject(testDDLStr);
         ClassObject classObject = ClassConvert.convertToClassObject(tableObject);
-        String gen = new Generator().gen(classObject);
+        String gen = new Generator().formatPOJOString(classObject);
         Assert.assertNotNull("最后输出不能为空", gen);
 
         try {
