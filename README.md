@@ -54,8 +54,8 @@ Can be found in a variety of MySQL clients, the following are commonly used clie
 
  - Sequel Pro: Enter the database, click on the selection table on the left, select Table Info on the menu bar on the upper right, and **Standard build statement** in the Create syntax on the right side.
 My
-- MySQL Workbench: enter the database, select the table on the left, right-click the table name, select from the pop-up menu, Copy to Clipboard -> Create Statement, at this time **Standard build statement** already exists in the clipboard
-- Navicat for MySQL: Create a data source link, double-click to open the database, drop the left table, left click to select the table, find DDL in the upper menu on the right side and click, **Standard form statement** will appear in the right window .
+- MySQL Workbench: Enter the database, select the table on the left, right-click the table name, select from the pop-up menu, Copy to Clipboard -> Create Statement, at this time **Standard build statement** already exists in the clipboard
+- Navicat for MySQL: Enter the database, double-click to open the database, drop the left table, left click to select the table, find DDL in the upper menu on the right side and click, **Standard form statement** will appear in the right window .
 
 The steps in the above ways are all the steps I tried to install on the mac. If it is other software, other platforms, the general approach is the same. After the table is selected, there will always be a place to display the ** standard form statement **, and you can find it.
 
