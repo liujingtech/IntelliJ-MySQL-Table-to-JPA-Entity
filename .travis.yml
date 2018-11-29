@@ -1,7 +1,10 @@
 language: java
 
+jdk:
+- oraclejdk8
+
 before_script:
-- chmod a+x gradlew
+- chmod +x gradlew
 
 script:
 - ./gradlew check
@@ -9,6 +12,10 @@ script:
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+
+before_cache:
+- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 
 cache:
   directories:
