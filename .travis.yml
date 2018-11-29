@@ -1,2 +1,4 @@
 language: java
-script: jar
+before_script:
+- chmod a+x gradlew
+script: ./gradlew jar
