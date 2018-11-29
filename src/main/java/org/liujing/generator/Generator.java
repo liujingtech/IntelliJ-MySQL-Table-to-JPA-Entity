@@ -73,7 +73,7 @@ public class Generator {
         StringBuilder stringBuilder = new StringBuilder();
         annotationObjectList.forEach(annotation -> {
             stringBuilder.append("\n@").append(annotation.getName());//@javax.persistence.EntityListeners
-            formatAnnotationCore(stringBuilder, annotation);
+            getAnnotationValue(annotation);
         });
         return stringBuilder;
     }
@@ -81,24 +81,28 @@ public class Generator {
     /**
      * 生成成员变量的注解
      * 和 formatClassAnnotation 的唯一区别在于为了格式化有个缩进
+     * 返回值类似下方字符串
      */
     @NotNull
     private StringBuilder formatMemberAnnotation(List<AnnotationObject> annotationObjectList) {
         StringBuilder stringBuilder = new StringBuilder();
         annotationObjectList.forEach(annotation -> {
             stringBuilder.append("\n\t@").append(annotation.getName());//@javax.persistence.EntityListeners
-            formatAnnotationCore(stringBuilder, annotation);
+            stringBuilder.append(getAnnotationValue(annotation));
         });
         return stringBuilder;
     }
 
     /**
-     * 生成
+     * 获取注解值字符串
+     * 返回值类似下方字符串
      */
-    private void formatAnnotationCore(StringBuilder stringBuilder, AnnotationObject annotation) {
+    private StringBuilder getAnnotationValue(AnnotationObject annotation) {
         Map<String, Object> valueMap = annotation.getValue();
-        if (valueMap == null)
-            return;
+        StringBuilder stringBuilder = new StringBuilder();
+        if (valueMap == null) {
+            return stringBuilder;
+        }
         stringBuilder.append("(");//@javax.persistence.EntityListeners(
         valueMap.forEach((key, value) -> {
             if (StringUtil.isNotEmpty(key)) {
@@ -115,6 +119,7 @@ public class Generator {
 
         });
         stringBuilder.append(")");//@javax.persistence.EntityListeners(name = "t_zibo_building")
+        return stringBuilder;
     }
 
     @NotNull
