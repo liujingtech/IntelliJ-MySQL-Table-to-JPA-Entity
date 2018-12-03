@@ -1,4 +1,4 @@
-# intellij-mysql-table-to-jpa-entity [![Build Status](https://travis-ci.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity.svg?branch=master)](https://travis-ci.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity)
+# intellij-mysql-table-to-jpa-entity [![Build Status](https://travis-ci.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity.svg?branch=master)](https://travis-ci.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity) [![codecov](https://codecov.io/gh/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity/branch/master/graph/badge.svg)](https://codecov.io/gh/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity)
 🎉一个简单易用的 MySQL table 转换到 JPA Entity 的 intelliJ 插件。
 
 这是一个轻量的无需配置的不需界面操作插件，如果你只是想快速地将一个 MySQL Table 转换成 JPA 的 Entity。那么你就应该试试它。
@@ -13,7 +13,7 @@
 
 ## 使用方式
 1. 从 MySQL 客户端软件中复制[标准建表语句](#例子)。
-2. 在 IntelliJ IDEA 中使用快捷键 Ctrl + Shift + X。
+2. 在 IntelliJ IDEA 中使用快捷键 Ctrl + Shift + X。__*注意：编辑器光标需要在Java文件内，并且编辑窗口获取了焦点*__
 3. 会弹出窗口确认生成成功。
 4. 在合适的位置粘贴即可。
 
