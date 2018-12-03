@@ -7,7 +7,7 @@ plugins {
 apply plugin: 'jacoco'
 
 group 'org.liujing'
-version '1.0.2-SNAPSHOT'
+version '1.0.3'//-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
@@ -30,11 +30,32 @@ jacocoTestReport {
 
 intellij {
     intellij.updateSinceUntilBuild false
-    sandboxDirectory = "$project.buildDir/myCustom-sandbox"
 }
 
 patchPluginXml {
     changeNotes """
-      Updates English version.<br>
+      Fix bug.<br>
       <em></em>"""
+}
+
+publishPlugin {
+    username intellijPublishUsername
+    password intellijPublishPassword
+}
+
+task fatJar(type: Jar) {
+    manifest.from jar.manifest
+    classifier = 'all'
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    } {
+        exclude "META-INF/*.SF"
+        exclude "META-INF/*.DSA"
+        exclude "META-INF/*.RSA"
+    }
+    with jar
+}
+
+artifacts {
+    archives fatJar
 }
