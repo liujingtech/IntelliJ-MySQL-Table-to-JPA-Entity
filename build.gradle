@@ -38,11 +38,6 @@ patchPluginXml {
       <em></em>"""
 }
 
-publishPlugin {
-    username intellijPublishUsername
-    password intellijPublishPassword
-}
-
 task fatJar(type: Jar) {
     manifest.from jar.manifest
     classifier = 'all'
