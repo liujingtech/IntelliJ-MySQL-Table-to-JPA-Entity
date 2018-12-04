@@ -1,4 +1,4 @@
-# intellij-mysql-table-to-jpa-entity [![Build Status](https://travis-ci.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity.svg?branch=master)](https://travis-ci.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity) [![codecov](https://codecov.io/gh/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity/branch/master/graph/badge.svg)](https://codecov.io/gh/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity)
+# Intellij-mysql-table-to-jpa-entity [![Build Status](https://travis-ci.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity.svg?branch=master)](https://travis-ci.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity) [![codecov](https://codecov.io/gh/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity/branch/master/graph/badge.svg)](https://codecov.io/gh/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity)
  Copy
 An easy-to-use MySQL table to convert to JPA Entity's intelliJ plugin.[中文介绍](/README_CN.md/)
 
