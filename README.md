@@ -1,4 +1,4 @@
-# intellij-mysql-table-to-jpa-entity [![Build Status](https://travis-ci.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity.svg?branch=master)](https://travis-ci.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity) [![codecov](https://codecov.io/gh/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity/branch/master/graph/badge.svg)](https://codecov.io/gh/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity)
+# Intellij-mysql-table-to-jpa-entity [![Build Status](https://travis-ci.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity.svg?branch=master)](https://travis-ci.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity) [![codecov](https://codecov.io/gh/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity/branch/master/graph/badge.svg)](https://codecov.io/gh/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity)
  Copy
 An easy-to-use MySQL table to convert to JPA Entity's intelliJ plugin.[中文介绍](/README_CN.md/)
 
@@ -23,7 +23,7 @@ Using MySQL **Standard Create table statement** to generate a JPA Entity.
 
 - Generate class annotation @Entity.
 - @Table(name = "table_name") that generates a class based on table name.
-- generate class comments based on table annotations.
+- Generate class comments based on table annotations.
 - Generate property annotations based on column annotations.
 - Generate property name based on column name, converted to small hump naming style.
 - Generate property Type based on column type, in accordance with [MySQL Specification](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-type-conversions.html).
