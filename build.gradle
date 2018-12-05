@@ -7,7 +7,7 @@ plugins {
 apply plugin: 'jacoco'
 
 group 'org.liujing'
-version '1.0.4
+version '1.0.4'//-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
@@ -20,6 +20,7 @@ dependencies {
     compile group: 'org.eclipse.persistence', name: 'javax.persistence', version: '2.2.1'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
 jacocoTestReport {
     reports {
         xml.enabled true
