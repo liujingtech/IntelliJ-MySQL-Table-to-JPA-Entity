@@ -73,7 +73,7 @@ public class Generator {
         StringBuilder stringBuilder = new StringBuilder();
         annotationObjectList.forEach(annotation -> {
             stringBuilder.append("\n@").append(annotation.getName());//@javax.persistence.EntityListeners
-            getAnnotationValue(annotation);
+            stringBuilder.append(getAnnotationValue(annotation));
         });
         return stringBuilder;
     }

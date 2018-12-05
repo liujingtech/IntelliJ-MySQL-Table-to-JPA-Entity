@@ -42,11 +42,12 @@ public class ClassConvert {
         entity.setName("Entity");
         defaultAnnotationList.add(entity);
 
+        Map<String, Object> tableMap = new HashMap<>();
+        tableMap.put("name", tableObject.getName());
+
         AnnotationObject table = new AnnotationObject();
         table.setFullName("javax.persistence.Table");
         table.setName("Table");
-        Map<String, Object> tableMap = new HashMap<>();
-        tableMap.put("name", tableObject.getName());
         table.setValue(tableMap);
         defaultAnnotationList.add(table);
     }
