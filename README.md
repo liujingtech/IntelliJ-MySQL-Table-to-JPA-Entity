@@ -23,7 +23,7 @@ Using MySQL **Standard Create table statement** to generate a JPA Entity.
 
 - Generate class annotation @Entity.
 - @Table(name = "table_name") that generates a class based on table name.
-- generate class comments based on table annotations.
+- Generate class comments based on table annotations.
 - Generate property annotations based on column annotations.
 - Generate property name based on column name, converted to small hump naming style.
 - Generate property Type based on column type, in accordance with [MySQL Specification](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-type-conversions.html).
