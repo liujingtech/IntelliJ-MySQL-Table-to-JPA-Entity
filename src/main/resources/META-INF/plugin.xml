@@ -13,7 +13,7 @@ This is a lightweight, no-configuration interface-free plugin.if you just want t
 How to use
 <ol>
 <li>Copy <a href="https://github.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity#standard-create-table-statement">Standard Create table statement</a> from the MySQL client software.</li>
-<li>Use shortcut keys in IntelliJ IDEA Ctrl + Shift + X.</li>
+<li>Use shortcut keys in IntelliJ IDEA Ctrl + Shift + X.  <b>NOTE:Need the cursor inside the java file and get the focus</b></li>
 <li>A pop-up window will confirm that the build was successful.</li>
 <li>Paste in the right place.</li>
 </ol>
