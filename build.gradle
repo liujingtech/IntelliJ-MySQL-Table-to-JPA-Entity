@@ -7,7 +7,7 @@ plugins {
 apply plugin: 'jacoco'
 
 group 'org.liujing'
-version '1.0.4'//-SNAPSHOT'
+version '1.0.5'//-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
