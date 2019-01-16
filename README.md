@@ -14,7 +14,7 @@ This is a lightweight, no-configuration interface-free plugin if you just want t
 
 ## How to use
 1. Copy [Standard Create table statement](https://github.com/liujingtech/IntelliJ-MySQL-Table-to-JPA-Entity#standard-create-table-statement) from the MySQL client software.
-2. Use shortcut keys in IntelliJ IDEA Ctrl + Shift + X. __*NOTE:Need the cursor inside the java file and get the focus*__
+2. Use shortcut keys in IntelliJ IDEA Ctrl + Shift + X. __*NOTE:The cursor must in the java class "{}"*__
 3. A pop-up window will confirm that the build was successful.
 4. Paste in the right place.
 
