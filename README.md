@@ -2,7 +2,7 @@
  Copy
 An easy-to-use MySQL table to convert to JPA Entity's intelliJ plugin.[中文介绍](/README_CN.md/)
 
-This is a lightweight, no-configuration interface-free plugin if you just want to quickly convert a MySQL Table to JPA Entity. Then you CAN try it.
+This is a lightweight, no-configuration interface-free plugin if you just want to quickly convert a MySQL Table to JPA Entity. Then you can try it.😊
 
 ## Download and install
 1. IntelliJ IDEA official website download [plug-in](https://plugins.jetbrains.com/plugin/11350-mysql-table-to-jpa-entity).
